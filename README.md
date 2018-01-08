@@ -1,1 +1,2 @@
-# graphql-demo
+# Demo project on GraphQL
+
