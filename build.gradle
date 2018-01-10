@@ -12,7 +12,6 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
 
 group = 'com.kobylynksyi'
 version = '0.0.1-SNAPSHOT'
@@ -22,10 +21,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    compile('org.springframework.boot:spring-boot-starter')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.4.1'
