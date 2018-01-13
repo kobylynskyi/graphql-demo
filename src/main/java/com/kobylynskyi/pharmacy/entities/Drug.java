@@ -1,4 +1,4 @@
-package com.kobylynskyi.graphql.demo.drug;
+package com.kobylynskyi.pharmacy.entities;
 
 import lombok.Data;
 

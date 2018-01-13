@@ -1,8 +1,7 @@
-package com.kobylynskyi.graphql.demo.patient;
+package com.kobylynskyi.pharmacy.entities;
 
 import lombok.Data;
-
-import java.util.Date;
+import org.joda.time.DateTime;
 
 @Data
 public class Patient {
@@ -10,6 +9,6 @@ public class Patient {
     private String id;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private DateTime dateOfBirth;
 
 }

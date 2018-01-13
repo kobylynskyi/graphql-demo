@@ -1,8 +1,7 @@
-package com.kobylynskyi.graphql.demo.prescription;
+package com.kobylynskyi.pharmacy.entities;
 
 import lombok.Data;
-
-import java.util.Date;
+import org.joda.time.DateTime;
 
 @Data
 public class Prescription {
@@ -10,7 +9,7 @@ public class Prescription {
     private String id;
     private String drugId;
     private String patientId;
-    private Date date;
+    private DateTime dateTime;
     private String usage;
     private int refills;
 }

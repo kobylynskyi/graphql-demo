@@ -1,12 +1,12 @@
-package com.kobylynskyi.graphql.demo.prescription;
+package com.kobylynskyi.pharmacy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PrescriptionApplication {
+public class PharmacyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PrescriptionApplication.class, args);
+        SpringApplication.run(PharmacyApplication.class, args);
     }
 }
