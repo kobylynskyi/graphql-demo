@@ -1,0 +1,38 @@
+schema {
+    query: EntryPoint
+    mutation: Mutation
+}
+
+type EntryPoint {
+    hello: String @deprecated(reason: "just playing around!")
+    prescription(id: String!): Prescription
+}
+
+type Mutation {
+    createPatient(firstName: String!, lastName: String!, dateOfBirth: DateTime!): Patient
+}
+
+type Patient {
+    id: String!
+    firstName: String
+    lastName: String!
+    dateOfBirth: DateTime!
+}
+
+type Prescription {
+    id: String!
+    drug: Drug!
+    patient: Patient!
+    dateTime: DateTime!
+    usage: String
+    refills: int
+}
+
+type Drug {
+    id: String!
+    name: String!
+    manufacturer: String!
+    image: String!
+}
+
+scalar DateTime
