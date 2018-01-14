@@ -1,6 +1,6 @@
-package com.kobylynskyi.pharmacy.repositories;
+package com.kobylynskyi.pharmacy.repository;
 
-import com.kobylynskyi.pharmacy.entities.Drug;
+import com.kobylynskyi.pharmacy.entity.Drug;
 import org.springframework.data.repository.CrudRepository;
 
 public interface DrugRepository extends CrudRepository<Drug, String> {

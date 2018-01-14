@@ -1,4 +1,4 @@
-package com.kobylynskyi.pharmacy.entities;
+package com.kobylynskyi.pharmacy.entity;
 
 import lombok.Data;
 

@@ -1,31 +1,32 @@
 schema {
-    query: EntryPoint
-    mutation: Mutation
+  query: Query
+  #mutation: Mutations
 }
 
-type EntryPoint {
-    hello: String @deprecated(reason: "just playing around!")
-    prescription(id: String!): Prescription
+type Query {
+  findAllPrescriptions: [Prescription]!
+  #findPrescriptions(patientId: String!): [Prescription]!
+  #countPrescriptions: Long!
 }
 
-type Mutation {
-    createPatient(firstName: String!, lastName: String!, dateOfBirth: DateTime!): Patient
-}
+#type Mutation {
+#    createPatient(firstName: String!, lastName: String!, dateOfBirth: DateTime!): Patient
+#}
 
 type Patient {
     id: String!
     firstName: String
     lastName: String!
-    dateOfBirth: DateTime!
+    #dateOfBirth: DateTime!
 }
 
 type Prescription {
     id: String!
     drug: Drug!
     patient: Patient!
-    dateTime: DateTime!
+    #dateTime: DateTime!
     usage: String
-    refills: int
+    refills: Int
 }
 
 type Drug {
@@ -35,4 +36,4 @@ type Drug {
     image: String!
 }
 
-scalar DateTime
+#scalar DateTime

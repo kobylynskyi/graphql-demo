@@ -1,24 +1,28 @@
-package com.kobylynskyi.pharmacy.resolvers;
+package com.kobylynskyi.pharmacy.graphql.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
-import com.kobylynskyi.pharmacy.entities.Drug;
-import com.kobylynskyi.pharmacy.entities.Patient;
-import com.kobylynskyi.pharmacy.entities.Prescription;
-import com.kobylynskyi.pharmacy.repositories.DrugRepository;
-import com.kobylynskyi.pharmacy.repositories.PatientRepository;
-import com.kobylynskyi.pharmacy.repositories.PrescriptionRepository;
+import com.kobylynskyi.pharmacy.entity.Drug;
+import com.kobylynskyi.pharmacy.entity.Patient;
+import com.kobylynskyi.pharmacy.entity.Prescription;
+import com.kobylynskyi.pharmacy.repository.DrugRepository;
+import com.kobylynskyi.pharmacy.repository.PatientRepository;
+import com.kobylynskyi.pharmacy.repository.PrescriptionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Resolver for Prescription fields
  *
  * @author bogdankobylinsky
  */
+@Component
 public class PrescriptionResolver implements GraphQLResolver<Prescription> {
 
     private PrescriptionRepository prescriptionRepository;
     private DrugRepository drugRepository;
     private PatientRepository patientRepository;
 
+    @Autowired
     public PrescriptionResolver(PrescriptionRepository prescriptionRepository,
                                 DrugRepository drugRepository,
                                 PatientRepository patientRepository) {
