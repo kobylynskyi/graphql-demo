@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author bogdankobylinsky
  */
+@Component
 public class DateTimeScalar extends GraphQLScalarType {
 
     private static final Coercing DATE_TIME_COERCING = new Coercing() {

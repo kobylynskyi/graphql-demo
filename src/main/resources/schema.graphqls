@@ -5,8 +5,8 @@ schema {
 
 type Query {
   findAllPrescriptions: [Prescription]!
-  #findPrescriptions(patientId: String!): [Prescription]!
-  #countPrescriptions: Long!
+  findPrescriptions(patientId: String!): [Prescription]!
+  countPrescriptions: Long!
 }
 
 #type Mutation {
@@ -17,14 +17,14 @@ type Patient {
     id: String!
     firstName: String
     lastName: String!
-    #dateOfBirth: DateTime!
+    dateOfBirth: DateTime!
 }
 
 type Prescription {
     id: String!
     drug: Drug!
     patient: Patient!
-    #dateTime: DateTime!
+    dateTime: DateTime!
     usage: String
     refills: Int
 }
@@ -36,4 +36,4 @@ type Drug {
     image: String!
 }
 
-#scalar DateTime
+scalar DateTime
