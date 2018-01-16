@@ -1,4 +1,4 @@
-package com.kobylynskyi.pharmacy.graphql.resolver;
+package com.kobylynskyi.pharmacy.graphql.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLResolver;
 import com.kobylynskyi.pharmacy.entity.Drug;
@@ -11,21 +11,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Resolver for Prescription fields
+ * Resolver of Prescription fields
  *
  * @author bogdankobylinsky
  */
 @Component
-public class PrescriptionResolver implements GraphQLResolver<Prescription> {
+public class PrescriptionFieldsResolver implements GraphQLResolver<Prescription> {
 
     private PrescriptionRepository prescriptionRepository;
     private DrugRepository drugRepository;
     private PatientRepository patientRepository;
 
     @Autowired
-    public PrescriptionResolver(PrescriptionRepository prescriptionRepository,
-                                DrugRepository drugRepository,
-                                PatientRepository patientRepository) {
+    public PrescriptionFieldsResolver(PrescriptionRepository prescriptionRepository,
+                                      DrugRepository drugRepository,
+                                      PatientRepository patientRepository) {
         this.prescriptionRepository = prescriptionRepository;
         this.drugRepository = drugRepository;
         this.patientRepository = patientRepository;

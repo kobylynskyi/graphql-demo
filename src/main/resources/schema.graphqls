@@ -4,13 +4,14 @@ schema {
 }
 
 type Query {
+    findAllPatients: [Patient]!
     findAllPrescriptions: [Prescription]!
     findPrescriptions(patientId: String!): [Prescription]!
-    countPrescriptions: Long!
 }
 
 type Mutation {
     createPatient(firstName: String!, lastName: String!): Patient
+    prescribe(drugId: String!, patientId: String!, usage: String, refills: Int): Prescription
 }
 
 type Patient {

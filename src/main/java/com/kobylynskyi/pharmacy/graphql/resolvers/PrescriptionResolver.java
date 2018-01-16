@@ -1,5 +1,6 @@
-package com.kobylynskyi.pharmacy.graphql.resolver;
+package com.kobylynskyi.pharmacy.graphql.resolvers;
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.kobylynskyi.pharmacy.entity.Prescription;
 import com.kobylynskyi.pharmacy.service.PrescriptionService;
@@ -7,12 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Resolver of all queries
+ * Resolver of all Prescription queries
  *
  * @author bogdankobylinsky
  */
 @Component
-public class PrescriptionQueryResolver implements GraphQLQueryResolver {
+public class PrescriptionResolver implements GraphQLQueryResolver, GraphQLMutationResolver {
 
     @Autowired
     private PrescriptionService service;
@@ -25,8 +26,8 @@ public class PrescriptionQueryResolver implements GraphQLQueryResolver {
         return service.findPrescriptions(patientId);
     }
 
-    public Long countPrescriptions() {
-        return service.countPrescriptions();
+    public Prescription prescribe(String drugId, String patientId, String usage, int refills) {
+        return service.prescribe(drugId, patientId, usage, refills);
     }
 
 }

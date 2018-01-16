@@ -2,11 +2,14 @@ package com.kobylynskyi.pharmacy.service;
 
 import com.kobylynskyi.pharmacy.entity.Prescription;
 import com.kobylynskyi.pharmacy.repository.PrescriptionRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.joda.time.DateTime;
 import org.springframework.stereotype.Component;
 
 /**
  * @author bogdankobylinsky
  */
+@Slf4j
 @Component
 public class PrescriptionService {
 
@@ -24,7 +27,10 @@ public class PrescriptionService {
         return repository.findAllByPatientId(patientId);
     }
 
-    public Long countPrescriptions() {
-        return repository.count();
+    public Prescription prescribe(String drugId, String patientId, String usage, int refills) {
+        Prescription prescription = repository.save(new Prescription(null, drugId, patientId,
+                DateTime.now(), usage, refills));
+        log.info("Prescription was created: {}", prescription);
+        return prescription;
     }
 }

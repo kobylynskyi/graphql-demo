@@ -8,6 +8,8 @@ import org.joda.time.format.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 /**
+ * Scalar of joda's DateTime class
+ *
  * @author bogdankobylinsky
  */
 @Component

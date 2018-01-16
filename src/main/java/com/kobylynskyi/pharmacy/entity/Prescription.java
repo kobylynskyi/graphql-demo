@@ -1,9 +1,11 @@
 package com.kobylynskyi.pharmacy.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.joda.time.DateTime;
 
 @Data
+@AllArgsConstructor
 public class Prescription {
 
     private String id;
