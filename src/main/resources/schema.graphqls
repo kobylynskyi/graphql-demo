@@ -1,23 +1,23 @@
 schema {
-  query: Query
-  #mutation: Mutations
+    query: Query
+    mutation: Mutation
 }
 
 type Query {
-  findAllPrescriptions: [Prescription]!
-  findPrescriptions(patientId: String!): [Prescription]!
-  countPrescriptions: Long!
+    findAllPrescriptions: [Prescription]!
+    findPrescriptions(patientId: String!): [Prescription]!
+    countPrescriptions: Long!
 }
 
-#type Mutation {
-#    createPatient(firstName: String!, lastName: String!, dateOfBirth: DateTime!): Patient
-#}
+type Mutation {
+    createPatient(firstName: String!, lastName: String!): Patient
+}
 
 type Patient {
     id: String!
     firstName: String
     lastName: String!
-    dateOfBirth: DateTime!
+    gender: String!
 }
 
 type Prescription {
