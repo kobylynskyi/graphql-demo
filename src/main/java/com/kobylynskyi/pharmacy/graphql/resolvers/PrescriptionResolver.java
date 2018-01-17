@@ -26,7 +26,7 @@ public class PrescriptionResolver implements GraphQLQueryResolver, GraphQLMutati
         return service.findPrescriptions(patientId);
     }
 
-    public Prescription prescribe(String drugId, String patientId, String usage, int refills) {
+    public Prescription prescribe(String drugId, String patientId, String usage, Integer refills) {
         return service.prescribe(drugId, patientId, usage, refills);
     }
 

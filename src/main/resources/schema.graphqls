@@ -6,10 +6,12 @@ schema {
 type Query {
     findAllPatients: [Patient]!
     findAllPrescriptions: [Prescription]!
+    findAllDrugs: [Drug]!
     findPrescriptions(patientId: String!): [Prescription]!
 }
 
 type Mutation {
+    createDrug(name: String!, manufacturer: String!, image: String): Drug
     createPatient(firstName: String!, lastName: String!): Patient
     prescribe(drugId: String!, patientId: String!, usage: String, refills: Int): Prescription
 }
@@ -34,7 +36,7 @@ type Drug {
     id: String!
     name: String!
     manufacturer: String!
-    image: String!
+    image: String
 }
 
 scalar DateTime

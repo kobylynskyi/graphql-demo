@@ -23,7 +23,7 @@ public class PatientService {
         return repository.findAll();
     }
 
-    public Patient addPatient(String firstName, String lastName, Gender gender) {
+    public Patient createPatient(String firstName, String lastName, Gender gender) {
         Patient patient = repository.save(new Patient(null, firstName, lastName,
                 gender == null ? Gender.UNKNOWN : gender));
         log.info("Patient was created: {}", patient);

@@ -23,7 +23,7 @@ public class PatientResolver implements GraphQLQueryResolver, GraphQLMutationRes
     }
 
     public Patient createPatient(String firstName, String lastName) {
-        return service.addPatient(firstName, lastName, null);
+        return service.createPatient(firstName, lastName, null);
     }
 
 }
